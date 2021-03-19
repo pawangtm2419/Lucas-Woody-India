@@ -1,0 +1,25 @@
+form {
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+}
+mat-form-field, .mat-raised-button{
+    width: 580px;
+}
+.mat-raised-button {
+    color:white;
+    background-color: #0678ef;
+    font-size: larger;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.mat-raised-button:hover {
+    color:#0678ef;
+    background-color: white;
+    transition-duration: 1s;
+}
+@media only screen and ( max-width: 900px) {
+    mat-form-field, .mat-raised-button{
+        width: 100%;
+    }
+}
