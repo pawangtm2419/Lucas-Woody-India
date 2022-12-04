@@ -1,27 +1,31 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="side" position="start">
-      <mat-nav-list>
-          <a (click)="sidenav.toggle()" mat-list-item><mat-icon>close</mat-icon> Close</a>
-          <a routerLink="/" routerLinkActive="active" (click)="sidenav.toggle()" mat-list-item><mat-icon>home</mat-icon> HOME</a>
-          <a routerLink="/about-us" routerLinkActive="active" (click)="sidenav.toggle()" mat-list-item> ABOUT US</a>
-          <a routerLink="product" routerLinkActive="active" (click)="sidenav.toggle()" mat-list-item> PRODUCTS</a>
-          <a routerLink="/contact-us" routerLinkActive="active" (click)="sidenav.toggle()" mat-list-item> CONTACT US</a>
-          <a  routerLink="/login" (click)="sidenav.toggle()" routerLinkActive="active"  mat-list-item> LOG IN</a> 
-      </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-      <mat-toolbar color="primary" class="sticky-top">
-        <mat-toolbar-row>
-          <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-          <a routerLink="/" routerLinkActive="active" mat-list-item><h1 class="text-white">LUCAS WOODY INDIA</h1></a>
-          <span class="spacer"></span>
-          <app-header></app-header>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <div class="main-content">
-          <router-outlet></router-outlet>
+<section>
+  <mat-toolbar class="bg-dark text-white fixed-top">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="menu-spacer"></span>
+      <a [routerLink]="'home'" routerLinkActive="active" style="color: #FFD700">Kushwaha Watch Company</a>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <a mat-button [routerLink]="'watch'" routerLinkActive="active">Watch</a>
+        <a mat-button [routerLink]="'accessories'" routerLinkActive="active">Accessories</a>
       </div>
-      <app-review *ngIf="router.url != '/login'"></app-review>
-      <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list class="mt-5">
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a mat-list-item [routerLink]="'watch'" routerLinkActive="active">Watch</a>
+        <a mat-list-item [routerLink]="'accessories'" routerLinkActive="active">Accessories</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <section style="margin-top: 3.5rem;">
+        <router-outlet></router-outlet>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>
+<app-footer></app-footer>

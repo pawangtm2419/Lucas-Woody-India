@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,5 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'woody';
-  constructor(public router: Router, public service: AppService) { }
+  title = 'watch';
 }

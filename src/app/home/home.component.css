@@ -1,0 +1,8 @@
+.bg-over {
+  background-color: #ffd70075;
+  padding: 2rem;
+}
+
+img {
+  filter: contrast(100%) brightness(60%)
+}
